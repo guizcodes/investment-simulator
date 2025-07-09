@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  font-size: 60px;
+}
+
+header p {
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 1px 1px 3px #000;
+}
+
+span {
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.simulator {
+  border-radius: 11px;
+  padding: 15px;
+  background: white;
+  color: black;
+  width: 70%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.simulator h2 {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.simulator label {
+  display: block;
+  font-size: 25px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.simulator input,
+.simulator select {
+  width: 70%;
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+  font-size: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+}
+
+#interest-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#interest {
+  width: 80px;
+}
+
+#duration {
+  width: 70%;
+  text-align: center;
+}
+
+#type {
+  width: 70%;
+}
+
+.simulator button {
+  margin: 20px auto 0;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  width: 50%;
+  font-size: 25px;
+  background-color: #008f02cb;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.simulator button:hover {
+  background-color: #008f02af;
+  cursor: pointer;
+}
+
+@media(max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 35px;
+    padding-bottom: 5px;
+  }
+
+  header p {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .simulator {
+    width: 85%;
+    padding: 15px;
+  }
+
+  .simulator h2 {
+    font-size: 25px;
+  }
+
+  .simulator label {
+    font-size: 18px;
+  }
+
+  .simulator input,
+  .simulator select {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .simulator button {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px;
+  }
+}
+
+@media(max-width: 400px) {
+  .simulator input,
+  .simulator select {
+    font-size: 14px;
+  }
+
+  .simulator button {
+    font-size: 16px;
+  }
+}
