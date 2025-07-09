@@ -18,29 +18,24 @@
       <div class="simulator">
         <h2>Fill in the information</h2>
 
-        <label for="val">Initial Investment</label>
+        <label for="initial_value">Initial Investment</label>
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-          <span>$</span>
-          <input type="number" name="val" id="val" />
+          <input type="text" name="initial_value" id="initial_value" placeholder="Insert Value"/>
         </div>
 
-        <label for="month">Monthly Investment</label>
+        <label for="monthly_value">Monthly Investment</label>
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-          <span>$</span>
-          <input type="number" name="month" id="month" />
+          <input type="text" name="monthly_value" id="monthly_value" placeholder="Insert Value"/>
         </div>
 
         <label for="interest">Interest Rate</label>
-        <div id="interest-wrapper">
-          <input type="number" name="interest" id="interest" min="0" step="0.01" />
-          <span>%</span>
-        </div>
+          <input type="number" name="interest" id="interest" placeholder="Value"/>
 
         <label for="duration">Until what date?</label>
-        <input type="month" name="duration" id="duration" min="2025-11" />
+        <input type="month" name="duration" id="duration" min="2025-07"/>
 
-        <label for="type">Type</label>
-        <select id="type">
+        <label for="interest-type">Interest Type</label>
+        <select id="interest-type">
           <option value="none">None</option>
           <option value="simple">Simple</option>
           <option value="compound">Compound</option>
@@ -62,7 +57,6 @@
         </ul>
       </div>      
     </section>
-
   </div>
 </body>
 </html>

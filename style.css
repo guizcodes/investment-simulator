@@ -67,37 +67,38 @@ span {
   text-align: center;
   font-size: 30px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 13px;
   color: black;
 }
 
-#interest-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+#initial_value {
+  width: 75%;
+}
+
+#monthly_value {
+  width: 75%;
 }
 
 #interest {
-  width: 80px;
+  width: 100px;
 }
 
 #duration {
-  width: 70%;
+  width: 75%;
   text-align: center;
 }
 
-#type {
-  width: 70%;
+#interest-type {
+  width: 75%;
 }
 
 .simulator button {
   margin: 20px auto 0;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 13px;
   border: none;
-  width: 50%;
-  font-size: 25px;
+  width: 100%;
+  font-size: 33px;
   background-color: #008f02cb;
   color: white;
   transition: background-color 0.3s ease;
