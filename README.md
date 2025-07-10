@@ -8,7 +8,7 @@
 
 ## 🖼️ Preview
 
-<img src="assets/preview.png" width="100%" alt="Project preview"/>
+![banner](./assets/preview.jpg)
 
 > A website to simulate future investments based on monthly deposits, interest rate, interest type and duration.
 
@@ -24,6 +24,10 @@
 - 💲 Choice of coins.
 - 🇧🇷 Translation button for pt-BR.
 - 📉 Interest-free calculations.
+
+## 🌐 Access this site
+
+[Click here!](https://guizcodes.github.io/investment-simulator/)
 
 ## 📝 License
 
