@@ -16,15 +16,6 @@ input_monthly_value.addEventListener('input', () => {
   format_input_value(input_monthly_value);
 });
 
-input_interest.addEventListener('input', () => {
-  let value = Number(input_interest.value);
-  if (value > 100){
-    window.alert('Max 100% rate!')
-    input_interest.value = ''
-    return;
-  };
-});
-
 button.addEventListener('click', () => {
   let raw_initial = input_initial_value.value.replace(/[^\d.]/g, '');
   let raw_monthly = input_monthly_value.value.replace(/[^\d.]/g, '');
@@ -36,7 +27,7 @@ button.addEventListener('click', () => {
   let interest_type = select_interest_type.value
 
   if (isNaN(initial_value) || isNaN(monthly_value) || duration == '' || interest_value == '' || interest_type == 'none') {
-    window.alert('incomplet inputs!');
+    window.alert('Incomplete information, please fill in all fields!');
     return;
   } else {
     response.innerHTML = ''
