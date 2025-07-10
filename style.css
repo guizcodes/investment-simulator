@@ -108,6 +108,34 @@ span {
   background-color: #007d02af;
   cursor: pointer;
 }
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 3px solid #000000;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+  margin-top: 28px;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.answer-box {
+  width: 100%;
+  padding-top: 25px;
+  font-size: 28px;
+}
 
 .why-use {
   padding: 20px;
@@ -159,8 +187,19 @@ span {
     padding: 12px;
   }
   
+  .answer-box {
+    padding-top: 13px;
+    font-size: 20px;
+  }
+  
   .why-use {
     font-size: 17px;
+  }
+
+
+  .loader {
+  width: 30px;
+  height: 30px;
   }
 }
 

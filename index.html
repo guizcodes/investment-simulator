@@ -29,10 +29,9 @@
         </div>
 
         <label for="interest">Interest Rate</label>
-          <input type="number" name="interest" id="interest" placeholder="Value"/>
-
-        <label for="duration">Until what date?</label>
-        <input type="month" name="duration" id="duration" min="2025-07"/>
+          <input type="number" name="interest" id="interest" placeholder="%"/>
+        <label for="duration">How many months?</label>
+        <input type="number" name="duration" id="duration" placeholder="month"/>
 
         <label for="interest-type">Interest Type</label>
         <select id="interest-type">
@@ -40,8 +39,11 @@
           <option value="simple">Simple</option>
           <option value="compound">Compound</option>
         </select>
-
-        <button id="buttonsimulate">Simulate</button>
+        <div id="loader" class="loader"></div>
+        <div class="answer-box">
+          <p id="response"></p>
+        </div>
+        <button type="button" id="button">Simulate</button>
       </div>
     </section>
     <section>
@@ -58,5 +60,6 @@
       </div>      
     </section>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

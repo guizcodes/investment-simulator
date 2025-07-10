@@ -1,0 +1,106 @@
+const input_initial_value = document.getElementById('initial_value');
+const input_monthly_value = document.getElementById('monthly_value');
+const input_interest = document.getElementById('interest');
+const button = document.getElementById('button')
+const response = document.getElementById('response');
+const input_duration = document.getElementById('duration');
+const select_interest_type = document.getElementById('interest-type')
+
+input_initial_value.addEventListener('input', () => {
+  clear_input(input_initial_value);
+  format_input_value(input_initial_value);
+});
+
+input_monthly_value.addEventListener('input', () => {
+  clear_input(input_monthly_value);
+  format_input_value(input_monthly_value);
+});
+
+input_interest.addEventListener('input', () => {
+  let value = Number(input_interest.value);
+  if (value > 100){
+    window.alert('Max 100% rate!')
+    input_interest.value = ''
+    return;
+  };
+});
+
+button.addEventListener('click', () => {
+  let raw_initial = input_initial_value.value.replace(/[^\d.]/g, '');
+  let raw_monthly = input_monthly_value.value.replace(/[^\d.]/g, '');
+
+  let initial_value = parseFloat(raw_initial);
+  let monthly_value = parseFloat(raw_monthly);
+  let interest_value = Number(input_interest.value);
+  let duration = parseInt(input_duration.value)
+  let interest_type = select_interest_type.value
+
+  if (isNaN(initial_value) || isNaN(monthly_value) || duration == '' || interest_value == '' || interest_type == 'none') {
+    window.alert('incomplet inputs!');
+    return;
+  } else {
+    response.innerHTML = ''
+    interest_value /= 100
+    function format_number_value(value) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+      }).format(value);
+    };    
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block'
+    setTimeout(() => {
+      loader.style.display = 'none'
+    }, 2500);
+    setTimeout(() => {
+      let invested = initial_value + monthly_value * duration
+      let invested_value = format_number_value(invested)
+      if (interest_type == 'compound') {
+        let calc = initial_value  * (1 + interest_value) ** duration + monthly_value * (((1 + interest_value) ** duration - 1) / interest_value)
+        let result = format_number_value(calc)
+        let calc_profit = calc - invested      
+        let profit = format_number_value(calc_profit.toFixed(2))        
+        response.innerHTML = `Total Invested: ${invested_value}<br>`;
+        response.innerHTML += `Total Amount: ${result}<br>`;
+        response.innerHTML += `Profit: ${profit}`;
+    } else if (interest_type == 'simple') {
+        let calc = initial_value * (1 + interest_value * duration) +
+           (monthly_value * duration) +
+           (monthly_value * interest_value * (duration * (duration + 1)) / 2);
+        let result = format_number_value(calc)
+        let calc_profit = calc - invested      
+        let profit = format_number_value(calc_profit.toFixed(2))              
+        response.innerHTML = `Total Invested: ${invested_value}<br>`;
+        response.innerHTML += `Total Amount: ${result}<br>`;
+        response.innerHTML += `Profit: ${profit}`;      
+      }
+    }, 2500)
+  }
+});
+
+function clear_input(input) {
+  let raw = input.value.replace(/[^\d]/g, '');
+  if (raw === '') {
+    input.value = '';
+    return '';
+  }
+  if (raw.length > 15) {
+    window.alert('Max 15 digits.');
+    raw = raw.slice(0, 15);
+  }
+  input.value = raw;
+  return raw;
+}
+
+function format_input_value(input) {
+  let raw = input.value.replace(/[^\d]/g, '');
+  if (raw === '') {
+    input.value = '';
+    return;
+  }
+  let value = (parseFloat(raw) / 100).toFixed(2);
+  input.value = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  }).format(value);
+}
