@@ -27,10 +27,6 @@ header p {
   text-shadow: 1px 1px 3px #000;
 }
 
-span {
-  font-size: 20px;
-}
-
 .container {
   max-width: 100%;
   padding: 15px;
@@ -42,7 +38,7 @@ span {
   padding: 15px;
   background: white;
   color: black;
-  width: 70%;
+  width: 60%;
   margin: 30px auto;
   text-align: center;
 }
