@@ -51,10 +51,11 @@ button.addEventListener('click', () => {
       let invested = initial_value + monthly_value * duration
       let invested_value = format_number_value(invested)
       if (interest_type == 'compound') {
-        let calc = initial_value  * (1 + interest_value) ** duration + monthly_value * (((1 + interest_value) ** duration - 1) / interest_value)
+        let calc = initial_value  * (1 + interest_value) ** duration + 
+           monthly_value * (((1 + interest_value) ** duration - 1) / interest_value) * (1 + interest_value);
         let result = format_number_value(calc)
         let calc_profit = calc - invested      
-        let profit = format_number_value(calc_profit.toFixed(2))        
+        let profit = format_number_value(Number(calc_profit.toFixed(2)));      
         response.innerHTML = `Total Invested: ${invested_value}<br>`;
         response.innerHTML += `Total Amount: ${result}<br>`;
         response.innerHTML += `Profit: ${profit}`;
@@ -64,7 +65,7 @@ button.addEventListener('click', () => {
            (monthly_value * interest_value * (duration * (duration + 1)) / 2);
         let result = format_number_value(calc)
         let calc_profit = calc - invested      
-        let profit = format_number_value(calc_profit.toFixed(2))              
+        let profit = format_number_value(Number(calc_profit.toFixed(2)));              
         response.innerHTML = `Total Invested: ${invested_value}<br>`;
         response.innerHTML += `Total Amount: ${result}<br>`;
         response.innerHTML += `Profit: ${profit}`;      
