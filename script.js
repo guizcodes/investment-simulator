@@ -23,10 +23,10 @@ button.addEventListener('click', () => {
   let initial_value = parseFloat(raw_initial);
   let monthly_value = parseFloat(raw_monthly);
   let interest_value = Number(input_interest.value);
-  let duration = parseInt(input_duration.value)
+  let duration = Number(input_duration.value)
   let interest_type = select_interest_type.value
 
-  if (isNaN(initial_value) || isNaN(monthly_value) || duration == '' || interest_value == '' || interest_type == 'none') {
+  if (initial_value == '' || duration == '' || interest_value == '' || interest_type == 'none') {
     window.alert('Incomplete information, please fill in all fields!');
     return;
   } else if (duration > 600) {
