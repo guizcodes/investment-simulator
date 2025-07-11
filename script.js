@@ -29,7 +29,11 @@ button.addEventListener('click', () => {
   if (isNaN(initial_value) || isNaN(monthly_value) || duration == '' || interest_value == '' || interest_type == 'none') {
     window.alert('Incomplete information, please fill in all fields!');
     return;
-  } else {
+  } else if (duration > 600) {
+    window.alert('The number of months you entered is exaggerated and unrealistic.')
+    } else if (interest_value > 4){
+      window.alert('The interest rate value is exaggerated.')
+      } else {
     response.innerHTML = ''
     interest_value /= 100
     function format_number_value(value) {
