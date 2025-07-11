@@ -5,57 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
-  <title>Investment Simulator</title>
+  <title>Investment-Simulator</title>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Investment Simulator</h1>
-      <p>Simulate your investments and see your returns grow</p>
+      <h1>Simulador de Investimentos</h1>
+      <p>Simule seus investimentos e veja seu retorno com base nos valores!</p>
     </header>
     
     <section>
       <div class="simulator">
-        <h2>Fill in the information</h2>
+        <h2>Preencha as informações</h2>
 
-        <label for="initial_value">Initial Investment</label>
+        <label for="initial_value">Investimento inicial</label>
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-          <input type="text" name="initial_value" id="initial_value" placeholder="Insert Value"/>
+          <input type="text" name="initial_value" id="initial_value" placeholder="Insira um valor"/>
         </div>
 
-        <label for="monthly_value">Monthly Investment</label>
+        <label for="monthly_value">Investimento mensal</label>
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-          <input type="text" name="monthly_value" id="monthly_value" placeholder="Insert Value"/>
+          <input type="text" name="monthly_value" id="monthly_value" placeholder="Insira um valor"/>
         </div>
 
-        <label for="interest">Monthly Interest Rate</label>
+        <label for="interest">Taxa de juros mensal</label>
           <input type="number" name="interest" id="interest" placeholder="%"/>
-        <label for="duration">How many months?</label>
-        <input type="number" name="duration" id="duration" placeholder="month"/>
+        <label for="duration">Quantos meses de investimento?</label>
+        <input type="number" name="duration" id="duration" placeholder="meses"/>
 
-        <label for="interest-type">Interest Type</label>
+        <label for="interest-type">Tipo de juros</label>
         <select id="interest-type">
-          <option value="none">None</option>
-          <option value="simple">Simple</option>
-          <option value="compound">Compound</option>
+          <option value="none"> </option>
+          <option value="simple">Simples</option>
+          <option value="compound">Composto</option>
         </select>
         <div id="loader" class="loader"></div>
         <div class="answer-box">
           <p id="response"></p>
         </div>
-        <button type="button" id="button">Simulate</button>
+        <button type="button" id="button">Simular</button>
       </div>
     </section>
     <section>
       <div class="why-use">
-        <h2>Why use?</h2>
+        <h2>Por que usar?</h2>
         <br>
         <ul>
-          <li>✔ Easy and quick investment simulator</li>
-          <li>✔ Helps visualize your financial growth</li>
-          <li>✔ Helps you plan your investments</li>
-          <li>✔ Accessible on any device</li>
-          <li>✔ Compare simple and compound interest </li>
+          <li>✔ Simulações rápidas e precisas</li>
+          <li>✔ Ajuda você a planejar seus investimentos</li>
+          <li>✔ Acesso rápido </li>
+          <li>✔ Diferença de juros simples pro composto </li>
         </ul>
       </div>      
     </section>

@@ -17,8 +17,8 @@ input_monthly_value.addEventListener('input', () => {
 });
 
 button.addEventListener('click', () => {
-  let raw_initial = input_initial_value.value.replace(/[^\d.]/g, '');
-  let raw_monthly = input_monthly_value.value.replace(/[^\d.]/g, '');
+  let raw_initial = input_initial_value.value.replace(/[^\d,]/g, '').replace(',', '.')
+  let raw_monthly = input_monthly_value.value.replace(/[^\d,]/g, '').replace(',', '.')
 
   let initial_value = parseFloat(raw_initial);
   let monthly_value = parseFloat(raw_monthly);
@@ -27,19 +27,19 @@ button.addEventListener('click', () => {
   let interest_type = select_interest_type.value
 
   if (initial_value == '' || duration == '' || interest_value == '' || interest_type == 'none') {
-    window.alert('Incomplete information, please fill in all fields!');
+    window.alert('Informações incompletas!');
     return;
   } else if (duration > 600) {
-    window.alert('The number of months you entered is exaggerated and unrealistic.')
+    window.alert('A quantidade de meses inserida é irreal e exagerada. Máximo: 600 meses.')
     } else if (interest_value > 4){
-      window.alert('The interest rate value is exaggerated.')
+      window.alert('O valor da taxa de juros mensal está exagerado.')
       } else {
     response.innerHTML = ''
     interest_value /= 100
     function format_number_value(value) {
-      return new Intl.NumberFormat('en-US', {
+      return new Intl.NumberFormat('pt-BR', {
         style: 'currency',
-        currency: 'USD'
+        currency: 'BRL'
       }).format(value);
     };    
     const loader = document.getElementById('loader');
@@ -56,9 +56,9 @@ button.addEventListener('click', () => {
         let result = format_number_value(calc)
         let calc_profit = calc - invested      
         let profit = format_number_value(Number(calc_profit.toFixed(2)));      
-        response.innerHTML = `Total Invested: ${invested_value}<br>`;
-        response.innerHTML += `Total Amount: ${result}<br>`;
-        response.innerHTML += `Profit: ${profit}`;
+        response.innerHTML = `Valor investido: ${invested_value}<br>`;
+        response.innerHTML += `Valor total: ${result}<br>`;
+        response.innerHTML += `Lucro: ${profit}`;
     } else if (interest_type == 'simple') {
         let calc = initial_value * (1 + interest_value * duration) +
            (monthly_value * duration) +
@@ -66,9 +66,9 @@ button.addEventListener('click', () => {
         let result = format_number_value(calc)
         let calc_profit = calc - invested      
         let profit = format_number_value(Number(calc_profit.toFixed(2)));              
-        response.innerHTML = `Total Invested: ${invested_value}<br>`;
-        response.innerHTML += `Total Amount: ${result}<br>`;
-        response.innerHTML += `Profit: ${profit}`;      
+        response.innerHTML = `Valor investido: ${invested_value}<br>`;
+        response.innerHTML += `Valor total: ${result}<br>`;
+        response.innerHTML += `Lucro: ${profit}`;      
       }
     }, 2500)
   }
@@ -81,7 +81,7 @@ function clear_input(input) {
     return '';
   }
   if (raw.length > 15) {
-    window.alert('Max 15 digits.');
+    window.alert('Máximo de 15 digitos.');
     raw = raw.slice(0, 15);
   }
   input.value = raw;
@@ -95,8 +95,8 @@ function format_input_value(input) {
     return;
   }
   let value = (parseFloat(raw) / 100).toFixed(2);
-  input.value = new Intl.NumberFormat('en-US', {
+  input.value = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
-    currency: 'USD'
+    currency: 'BRL'
   }).format(value);
 }

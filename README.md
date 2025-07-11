@@ -1,4 +1,6 @@
-# Investment Simulator
+📄 🇺🇸 English version: [README.en-US.md](README.en-US.md)  
+
+# Simulador de Investimentos
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 Badge" />
@@ -8,27 +10,25 @@
 
 ## 🖼️ Preview
 
-![banner](./assets/preview.jpg)
+![banner](./assets/previewBR.jpg)
 
-> A website to simulate future investments based on monthly deposits, interest rate, interest type and duration.
+> Um website que simula seus investimentos com base em valor mensal, taxa de juros e juros compostos ou simples.
 
-## ✨ Features
+## ✨  Funcionalidades
 
-- 📊 Interactive investment calculator.
-- 💰 Calculates returns with interest rates.
-- 💡 Responsive design for all devices.
+- 📊 Calculadora de investimentos interativa.
+- 💡 Design responsivo para cada dispostivo.
 
-## 🛠️ Upcoming Features
+## 🛠️ Futuras Funcionalidades
 
-- 📈 Chart visualization.
-- 💲 Choice of coins.
-- 🇧🇷 Translation button for pt-BR.
-- 📉 Interest-free calculations.
+- 📈 Visualização de gráficos.
+- 💲 Escolha de moedas.
+- 📉 Opção de calcular sem juros (calcular com base em apenas guardar o dinheiro)
 
-## 🌐 Access this site
+## 🌐 Acesse o site
 
-[Click here!](https://guizcodes.github.io/investment-simulator/)
+[Clique aqui!](https://guizcodes.github.io/investment-simulator/)
 
-## 📝 License
+## 📝 Licença
 
-Licensed under the [MIT License](LICENSE).
+Licenciado sobre a [MIT License](LICENSE).
